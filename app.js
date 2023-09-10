@@ -9,17 +9,10 @@ const fileUpload = require('express-fileupload')
 const MySQLStore = require('express-mysql-session')(session);
 const passport = require('./controllers/UserLoginLocalController').passport
 const path = require('path')
-const client = require('twilio')
-(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+// const client = require('twilio')
+// (process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 const app = express()
-const server = http.createServer(app)
-const io =new Server(server , {
-    cors:{
-        origin:"http://localhost:3000",
-        credentials:true,
-    }
-})
 
 //mysql session store
 const sessionStore = new MySQLStore({
