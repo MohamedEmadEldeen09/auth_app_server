@@ -1,10 +1,8 @@
 require('dotenv').config()
 const express = require('express')
-const http = require('http')
 const session = require('express-session')
 const cookies = require('cookie-parser')
 const cors = require('cors')
-const {Server} = require('socket.io')
 const fileUpload = require('express-fileupload')
 const MySQLStore = require('express-mysql-session')(session);
 const passport = require('./controllers/UserLoginLocalController').passport
@@ -51,7 +49,7 @@ app.use(session({
 app.use(cookies())
 app.use(cors({
     credentials:true,
-    origin:['http://localhost:3000'],
+    origin:['https://MohamedEmadEldeen09.github.io/auth_app'],
 }))
 app.use(fileUpload({
     createParentPath:true,
