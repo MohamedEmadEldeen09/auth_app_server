@@ -49,7 +49,7 @@ app.use(session({
 app.use(cookies())
 app.use(cors({
     credentials:true,
-    origin:['https://MohamedEmadEldeen09.github.io/auth_app'],
+    origin:"*",
 }))
 app.use(fileUpload({
     createParentPath:true,
@@ -66,6 +66,6 @@ app.use('/user/auth' , require('./routes/UserLoginLocalRoute'))
 app.use('/user/profile' , require('./routes/UserUpdateProfileRoute'))
 
 
-app.listen( process.env.PORT ,()=>{
-  console.log('Backend server is runing on port '+process.env.PORT);
+app.listen( process.env.PORT || 3001,()=>{
+  console.log('Backend server is runing on port '+process.env.PORT || 3001);
 })
